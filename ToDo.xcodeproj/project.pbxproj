@@ -7,18 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E230335F2668CE440099B1DB /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E230335E2668CE440099B1DB /* HomeViewModel.swift */; };
 		E23D8A862665248C0070F38E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23D8A852665248C0070F38E /* AppDelegate.swift */; };
 		E23D8A882665248C0070F38E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23D8A872665248C0070F38E /* SceneDelegate.swift */; };
 		E23D8A8A2665248C0070F38E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23D8A892665248C0070F38E /* HomeView.swift */; };
 		E23D8A8F2665248D0070F38E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E23D8A8E2665248D0070F38E /* Preview Assets.xcassets */; };
 		E23D8A922665248D0070F38E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E23D8A902665248D0070F38E /* LaunchScreen.storyboard */; };
 		E2555E692667B46E00C389EA /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2555E682667B46E00C389EA /* Color.swift */; };
+		E2744B9B2668B18D00B94DEB /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2744B9A2668B18D00B94DEB /* TaskModel.swift */; };
+		E2744B9F2668B39B00B94DEB /* TaskViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2744B9E2668B39B00B94DEB /* TaskViewCell.swift */; };
+		E2744BA22668B3D200B94DEB /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2744BA12668B3D200B94DEB /* PreviewProvider.swift */; };
 		E27BB1572667B6AB005E4DFD /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27BB1562667B6AB005E4DFD /* CircleButtonView.swift */; };
 		E27BB15B2667BBB1005E4DFD /* CircleButtonAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27BB15A2667BBB1005E4DFD /* CircleButtonAnimationView.swift */; };
 		E2FEA05D2667C4B000A2A52B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2FEA05C2667C4B000A2A52B /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E230335E2668CE440099B1DB /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E23D8A822665248C0070F38E /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E23D8A852665248C0070F38E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E23D8A872665248C0070F38E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -27,6 +32,9 @@
 		E23D8A912665248D0070F38E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E23D8A932665248D0070F38E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2555E682667B46E00C389EA /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		E2744B9A2668B18D00B94DEB /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		E2744B9E2668B39B00B94DEB /* TaskViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewCell.swift; sourceTree = "<group>"; };
+		E2744BA12668B3D200B94DEB /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		E27BB1562667B6AB005E4DFD /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
 		E27BB15A2667BBB1005E4DFD /* CircleButtonAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonAnimationView.swift; sourceTree = "<group>"; };
 		E2FEA05C2667C4B000A2A52B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,6 +70,7 @@
 		E23D8A842665248C0070F38E /* ToDo */ = {
 			isa = PBXGroup;
 			children = (
+				E2744B992668B17000B94DEB /* Models */,
 				E2F2A6572667B21300ADE327 /* Core */,
 				E2F2A6562667B20300ADE327 /* Extensions */,
 				E23D8A852665248C0070F38E /* AppDelegate.swift */,
@@ -86,8 +95,17 @@
 			isa = PBXGroup;
 			children = (
 				E23D8A892665248C0070F38E /* HomeView.swift */,
+				E2744B9E2668B39B00B94DEB /* TaskViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E2744B992668B17000B94DEB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E2744B9A2668B18D00B94DEB /* TaskModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E27BB1542667B661005E4DFD /* Components */ = {
@@ -111,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				E2555E682667B46E00C389EA /* Color.swift */,
+				E2744BA12668B3D200B94DEB /* PreviewProvider.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -136,6 +155,7 @@
 		E2F2A6592667B22500ADE327 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				E230335E2668CE440099B1DB /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -213,9 +233,13 @@
 				E23D8A862665248C0070F38E /* AppDelegate.swift in Sources */,
 				E2555E692667B46E00C389EA /* Color.swift in Sources */,
 				E23D8A882665248C0070F38E /* SceneDelegate.swift in Sources */,
+				E230335F2668CE440099B1DB /* HomeViewModel.swift in Sources */,
+				E2744B9F2668B39B00B94DEB /* TaskViewCell.swift in Sources */,
 				E27BB1572667B6AB005E4DFD /* CircleButtonView.swift in Sources */,
 				E23D8A8A2665248C0070F38E /* HomeView.swift in Sources */,
 				E27BB15B2667BBB1005E4DFD /* CircleButtonAnimationView.swift in Sources */,
+				E2744BA22668B3D200B94DEB /* PreviewProvider.swift in Sources */,
+				E2744B9B2668B18D00B94DEB /* TaskModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

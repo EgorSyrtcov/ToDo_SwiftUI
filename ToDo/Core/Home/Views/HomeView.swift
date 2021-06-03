@@ -11,6 +11,8 @@ struct HomeView: View {
     
     @State private var showDetailView: Bool = false
     
+    @StateObject private var vm = HomeViewModel()
+    
     var body: some View {
         ZStack {
             Color.theme.background
@@ -19,8 +21,14 @@ struct HomeView: View {
             VStack {
                 homeHeader
                 Spacer(minLength: 0)
+                
+                List {
+                    TaskViewCell(task: DeveloperPriview.shared.mockTask)
+                }
+                .listStyle(PlainListStyle())
             }
         }
+        .environmentObject(vm)
     }
 }
 
