@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E230335F2668CE440099B1DB /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E230335E2668CE440099B1DB /* HomeViewModel.swift */; };
-		E23033642668DBF30099B1DB /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23033632668DBF30099B1DB /* AddTaskView.swift */; };
 		E23D8A862665248C0070F38E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23D8A852665248C0070F38E /* AppDelegate.swift */; };
 		E23D8A882665248C0070F38E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23D8A872665248C0070F38E /* SceneDelegate.swift */; };
 		E23D8A8A2665248C0070F38E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23D8A892665248C0070F38E /* HomeView.swift */; };
@@ -25,7 +24,6 @@
 
 /* Begin PBXFileReference section */
 		E230335E2668CE440099B1DB /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		E23033632668DBF30099B1DB /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 		E23D8A822665248C0070F38E /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E23D8A852665248C0070F38E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E23D8A872665248C0070F38E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,7 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				E23D8A892665248C0070F38E /* HomeView.swift */,
-				E23033632668DBF30099B1DB /* AddTaskView.swift */,
 				E2744B9E2668B39B00B94DEB /* TaskViewCell.swift */,
 			);
 			path = Views;
@@ -233,7 +230,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E23033642668DBF30099B1DB /* AddTaskView.swift in Sources */,
 				E23D8A862665248C0070F38E /* AppDelegate.swift in Sources */,
 				E2555E692667B46E00C389EA /* Color.swift in Sources */,
 				E23D8A882665248C0070F38E /* SceneDelegate.swift in Sources */,
