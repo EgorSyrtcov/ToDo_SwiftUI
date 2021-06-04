@@ -9,7 +9,24 @@ import Foundation
 
 class HomeViewModel: ObservableObject {
     
-    func test() {
-        print("Hello")
+    @Published var taskLists = [TaskModel]()
+    
+    init() {
+        getMockTasks()
+    }
+    
+    func getMockTasks() {
+        let task1 = TaskModel(title: "Купить молоко", description: "3 литра")
+        let task2 = TaskModel(title: "Купить хлеб", description: "1 буханка")
+        let task3 = TaskModel(title: "Купить сметана", description: "1 пачка")
+        
+        taskLists.append(task1)
+        taskLists.append(task2)
+        taskLists.append(task3)
+    }
+    
+    func deleteTask(index: IndexSet) {
+        taskLists.remove(atOffsets: index)
     }
 }
+

@@ -7,15 +7,11 @@
 
 import UIKit
 
-class TaskModel {
+struct TaskModel: Identifiable {
     
+    let id: String = UUID().uuidString
     let title: String
     let description: String?
     let iconImageName = "circle"
     let isCompleted: Bool = false
-    
-    init(title: String, description: String?) {
-        self.title = title
-        self.description = description
-    }
 }

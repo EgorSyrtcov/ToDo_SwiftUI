@@ -11,7 +11,7 @@ struct HomeView: View {
     
     @State private var showDetailView: Bool = false
     
-    @StateObject private var vm = HomeViewModel()
+    @StateObject var vm = HomeViewModel()
     
     var body: some View {
         ZStack {
@@ -20,15 +20,18 @@ struct HomeView: View {
             
             VStack {
                 homeHeader
-                Spacer(minLength: 0)
                 
-                List {
-                    TaskViewCell(task: DeveloperPriview.shared.mockTask)
+                if !showDetailView {
+                    allTaskList
+                    .transition(.move(edge: .leading))
                 }
-                .listStyle(PlainListStyle())
+                
+                if showDetailView {
+                    AddTaskView()
+                    Spacer()
+                }
             }
         }
-        .environmentObject(vm)
     }
 }
 
@@ -64,5 +67,15 @@ extension HomeView {
                 }
         }
         .padding(.horizontal)
+    }
+    
+    private var allTaskList: some View {
+        List {
+            ForEach(vm.taskLists) { (item) in
+                TaskViewCell(task: item)
+            }
+            .onDelete(perform: vm.deleteTask )
+        }
+        .listStyle(PlainListStyle())
     }
 }

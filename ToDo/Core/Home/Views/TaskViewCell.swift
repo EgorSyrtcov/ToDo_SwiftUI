@@ -16,7 +16,7 @@ struct TaskViewCell: View {
             Image(systemName: "\(task.iconImageName)")
                 .frame(width: 30, height: 30)
             Spacer()
-            VStack {
+            VStack(alignment: .trailing) {
                 Text("\(task.title)")
                     .font(.headline)
                     .foregroundColor(Color.theme.accent)
