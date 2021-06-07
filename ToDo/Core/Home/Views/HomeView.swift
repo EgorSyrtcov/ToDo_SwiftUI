@@ -20,6 +20,7 @@ struct HomeView: View {
                                             CircleButtonView(iconName: "plus")
                                         }))
         }
+        .environmentObject(vm)
     }
 }
 

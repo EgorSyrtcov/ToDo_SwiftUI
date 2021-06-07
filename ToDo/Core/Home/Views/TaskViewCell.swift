@@ -29,14 +29,7 @@ struct TaskViewCell: View {
 
 struct TaskViewCell_Previews: PreviewProvider {
     static var previews: some View {
-        
-        Group {
-            TaskViewCell(task: dev.mockTask)
-                .previewLayout(.sizeThatFits)
-            
-            TaskViewCell(task: dev.mockTask)
-                .previewLayout(.sizeThatFits)
-                .preferredColorScheme(.dark)
-        }
+        TaskViewCell(task: dev.mockTask)
+            .previewLayout(.sizeThatFits)
     }
 }

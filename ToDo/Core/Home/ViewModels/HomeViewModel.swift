@@ -28,5 +28,9 @@ class HomeViewModel: ObservableObject {
     func deleteTask(index: IndexSet) {
         taskLists.remove(atOffsets: index)
     }
+    
+    func addToDo(_ task: TaskModel) {
+        taskLists.append(task)
+    }
 }
 
