@@ -15,12 +15,10 @@ struct HomeView: View {
         NavigationView {
             allTaskList
                 .navigationBarTitle("ToDo List 💡")
-                .navigationBarItems(trailing:
-                                        Button(action: {
-                                            print("Add new task")
-                                        }) {
+                .navigationBarItems(trailing: NavigationLink(
+                                        destination: AddTaskView(), label: {
                                             CircleButtonView(iconName: "plus")
-                                        })
+                                        }))
         }
     }
 }

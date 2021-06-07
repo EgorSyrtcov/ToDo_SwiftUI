@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AddTaskView: View {
     
+    @Environment(\.presentationMode) var presentationMode
+    
     @State private var newTask: String = ""
     @State private var newDiscription: String = ""
 
@@ -29,8 +31,18 @@ struct AddTaskView: View {
                 .background(Color(#colorLiteral(red: 0.7540688515, green: 0.7540867925, blue: 0.7540771365, alpha: 1)))
                 .foregroundColor(.red)
                 .cornerRadius(10)
+            
+            Button(action: { presentationMode.wrappedValue.dismiss() }, label: {
+                Text("SAVE")
+                    .bold()
+                    .frame(width: 280, height: 50)
+                    .background(Color.red)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+                    
+            })
         }
-        .padding()
+        .offset(y: -60)
     }
 }
 
