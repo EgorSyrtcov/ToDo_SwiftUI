@@ -38,6 +38,11 @@ extension HomeView {
         List {
             ForEach(vm.taskLists) { (item) in
                 TaskViewCell(task: item)
+                    .onTapGesture {
+                        withAnimation(.easeOut) {
+                            vm.updateTask(task: item)
+                        }
+                    }
             }
             .onDelete(perform: vm.deleteTask )
             .onMove(perform: vm.moveTask)

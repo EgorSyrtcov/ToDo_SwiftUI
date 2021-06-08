@@ -37,5 +37,12 @@ class HomeViewModel: ObservableObject {
         taskLists.move(fromOffsets: from, toOffset: to)
     }
     
+    func updateTask(task: TaskModel) {
+        
+        if let index = taskLists.firstIndex ( where: { $0.id == task.id }) {
+            taskLists[index] = TaskModel(title: task.title, description: task.description, isCompleted: !task.isCompleted)
+        }
+    }
+    
 }
 
