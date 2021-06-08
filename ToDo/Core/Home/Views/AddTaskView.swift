@@ -13,7 +13,9 @@ struct AddTaskView: View {
     
     @State private var newTask: String = ""
     @State private var newDiscription: String = ""
+    
     @State var showsAlert = false
+    @State var alertTitle: String = ""
     
     @EnvironmentObject var vm: HomeViewModel
     
@@ -36,28 +38,41 @@ struct AddTaskView: View {
                 .foregroundColor(.red)
                 .cornerRadius(10)
             
-            Button(action: {
-                    
-                    if newTask == "" || newDiscription == "" {
-                        showsAlert = true
-                        return
-                    }
-                    
-                    let task = TaskModel(title: newTask, description: newDiscription, isCompleted: false)
-                    vm.addToDo(task)
-                    presentationMode.wrappedValue.dismiss() }, label: {
+            Button(action: saveButtonPresenter, label: {
                         Text("SAVE")
                             .bold()
                             .frame(width: 280, height: 50)
                             .background(Color.red)
                             .foregroundColor(.white)
                             .cornerRadius(10)
-                            .alert(isPresented: $showsAlert, content: {
-                                Alert(title: Text("Enter your title and description"))
-                            })
                     })
         }
         .offset(y: -60)
+        .alert(isPresented: $showsAlert, content: getAlert)
+    }
+    
+    func textIsAppropriate() -> Bool {
+        if newTask.count < 3 || newDiscription.count < 3 {
+            alertTitle = "Your new todo item must be at least 3 characters long!!!😨😰😱"
+            showsAlert.toggle()
+            return false
+        }
+        return true
+    }
+    
+    func saveButtonPresenter() {
+        if textIsAppropriate() {
+            
+            let task = TaskModel(title: newTask,
+                                 description: newDiscription,
+                                 isCompleted: false)
+            vm.addToDo(task)
+            presentationMode.wrappedValue.dismiss()
+        }
+    }
+    
+    func getAlert() -> Alert {
+        Alert(title: Text(alertTitle))
     }
 }
 
