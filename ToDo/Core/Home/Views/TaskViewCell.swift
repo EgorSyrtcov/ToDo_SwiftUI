@@ -13,17 +13,18 @@ struct TaskViewCell: View {
     
     var body: some View {
         HStack {
-            Image(systemName: "\(task.iconImageName)")
+            Image(systemName: task.isCompleted ? "checkmark.circle" : "circle")
                 .frame(width: 30, height: 30)
+                .foregroundColor(task.isCompleted ? .green : .red)
             Spacer()
             VStack(alignment: .trailing) {
                 Text("\(task.title)")
-                    .font(.headline)
+                    .font(.title2)
                     .foregroundColor(Color.theme.accent)
-                Text("\(task.description ?? "")")
+                Text("\(task.description)")
             }
         }
-        .padding(.horizontal)
+        .padding(.vertical, 8)
     }
 }
 

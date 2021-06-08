@@ -11,7 +11,6 @@ struct TaskModel: Identifiable {
     
     let id: String = UUID().uuidString
     let title: String
-    let description: String?
-    let iconImageName = "circle"
-    let isCompleted: Bool = false
+    let description: String
+    let isCompleted: Bool
 }

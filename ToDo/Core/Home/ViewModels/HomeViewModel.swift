@@ -16,9 +16,9 @@ class HomeViewModel: ObservableObject {
     }
     
     func getMockTasks() {
-        let task1 = TaskModel(title: "Купить молоко", description: "3 литра")
-        let task2 = TaskModel(title: "Купить хлеб", description: "1 буханка")
-        let task3 = TaskModel(title: "Купить сметана", description: "1 пачка")
+        let task1 = TaskModel(title: "Купить молоко", description: "3 литра", isCompleted: true)
+        let task2 = TaskModel(title: "Купить хлеб", description: "1 буханка", isCompleted: false)
+        let task3 = TaskModel(title: "Купить сметана", description: "1 пачка", isCompleted: false)
         
         taskLists.append(task1)
         taskLists.append(task2)
@@ -32,5 +32,10 @@ class HomeViewModel: ObservableObject {
     func addToDo(_ task: TaskModel) {
         taskLists.append(task)
     }
+    
+    func moveTask(from: IndexSet, to: Int) {
+        taskLists.move(fromOffsets: from, toOffset: to)
+    }
+    
 }
 

@@ -15,7 +15,9 @@ struct HomeView: View {
         NavigationView {
             allTaskList
                 .navigationBarTitle("ToDo List 💡")
-                .navigationBarItems(trailing: NavigationLink(
+                .navigationBarItems(
+                    leading: EditButton(),
+                    trailing: NavigationLink(
                                         destination: AddTaskView(), label: {
                                             CircleButtonView(iconName: "plus")
                                         }))
@@ -38,6 +40,7 @@ extension HomeView {
                 TaskViewCell(task: item)
             }
             .onDelete(perform: vm.deleteTask )
+            .onMove(perform: vm.moveTask)
         }
         .listStyle(PlainListStyle())
     }

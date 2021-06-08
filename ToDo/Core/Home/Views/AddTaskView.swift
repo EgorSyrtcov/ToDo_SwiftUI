@@ -43,7 +43,7 @@ struct AddTaskView: View {
                         return
                     }
                     
-                    let task = TaskModel(title: newTask, description: newDiscription)
+                    let task = TaskModel(title: newTask, description: newDiscription, isCompleted: false)
                     vm.addToDo(task)
                     presentationMode.wrappedValue.dismiss() }, label: {
                         Text("SAVE")
@@ -61,8 +61,8 @@ struct AddTaskView: View {
     }
 }
 
-//struct AddTaskView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AddTaskView(vm: )
-//    }
-//}
+struct AddTaskView_Previews: PreviewProvider {
+    static var previews: some View {
+        AddTaskView()
+    }
+}

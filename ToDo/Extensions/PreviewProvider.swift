@@ -19,5 +19,5 @@ class DeveloperPriview {
     static let shared = DeveloperPriview()
     private init() {}
     
-    let mockTask = TaskModel(title: "Купить молоко", description: "2 литра")
+    let mockTask = TaskModel(title: "Купить молоко", description: "2 литра", isCompleted: false)
 }
