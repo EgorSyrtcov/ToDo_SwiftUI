@@ -7,10 +7,17 @@
 
 import UIKit
 
-struct TaskModel: Identifiable {
+struct TaskModel: Identifiable, Codable {
     
-    let id: String = UUID().uuidString
+    let id: String
     let title: String
     let description: String
     let isCompleted: Bool
+    
+    init(id: String = UUID().uuidString, title: String, description: String, isCompleted: Bool) {
+        self.id = id
+        self.title = title
+        self.description = description
+        self.isCompleted = isCompleted
+    }
 }

@@ -9,20 +9,31 @@ import Foundation
 
 class HomeViewModel: ObservableObject {
     
-    @Published var taskLists = [TaskModel]()
+    @Published var taskLists = [TaskModel]() {
+        didSet {
+            saveTasks()
+        }
+    }
+    private let itemsKey = "task_lisk"
     
     init() {
         getMockTasks()
     }
     
     func getMockTasks() {
-        let task1 = TaskModel(title: "Купить молоко", description: "3 литра", isCompleted: true)
-        let task2 = TaskModel(title: "Купить хлеб", description: "1 буханка", isCompleted: false)
-        let task3 = TaskModel(title: "Купить сметана", description: "1 пачка", isCompleted: false)
+//        let task1 = TaskModel(title: "Купить молоко", description: "3 литра", isCompleted: true)
+//        let task2 = TaskModel(title: "Купить хлеб", description: "1 буханка", isCompleted: false)
+//        let task3 = TaskModel(title: "Купить сметана", description: "1 пачка", isCompleted: false)
+//
+//        taskLists.append(task1)
+//        taskLists.append(task2)
+//        taskLists.append(task3)
         
-        taskLists.append(task1)
-        taskLists.append(task2)
-        taskLists.append(task3)
+        guard
+            let data = UserDefaults.standard.data(forKey: itemsKey),
+            let savedTasks = try? JSONDecoder().decode([TaskModel].self, from: data)
+            else { return }
+        self.taskLists = savedTasks
     }
     
     func deleteTask(index: IndexSet) {
@@ -44,5 +55,10 @@ class HomeViewModel: ObservableObject {
         }
     }
     
+    func saveTasks() {
+        if let encodedData = try? JSONEncoder().encode(taskLists) {
+            UserDefaults.standard.setValue(encodedData, forKey: itemsKey)
+        }
+    }
 }
 
