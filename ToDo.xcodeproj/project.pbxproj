@@ -15,6 +15,7 @@
 		E23D8A8F2665248D0070F38E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E23D8A8E2665248D0070F38E /* Preview Assets.xcassets */; };
 		E23D8A922665248D0070F38E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E23D8A902665248D0070F38E /* LaunchScreen.storyboard */; };
 		E2555E692667B46E00C389EA /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2555E682667B46E00C389EA /* Color.swift */; };
+		E26526CE26724BE400003785 /* NoTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26526CD26724BE400003785 /* NoTasksView.swift */; };
 		E2744B9B2668B18D00B94DEB /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2744B9A2668B18D00B94DEB /* TaskModel.swift */; };
 		E2744B9F2668B39B00B94DEB /* TaskViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2744B9E2668B39B00B94DEB /* TaskViewCell.swift */; };
 		E2744BA22668B3D200B94DEB /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2744BA12668B3D200B94DEB /* PreviewProvider.swift */; };
@@ -34,6 +35,7 @@
 		E23D8A912665248D0070F38E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E23D8A932665248D0070F38E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2555E682667B46E00C389EA /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		E26526CD26724BE400003785 /* NoTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoTasksView.swift; sourceTree = "<group>"; };
 		E2744B9A2668B18D00B94DEB /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		E2744B9E2668B39B00B94DEB /* TaskViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewCell.swift; sourceTree = "<group>"; };
 		E2744BA12668B3D200B94DEB /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				E23D8A892665248C0070F38E /* HomeView.swift */,
 				E2744B9E2668B39B00B94DEB /* TaskViewCell.swift */,
 				E22C798A266A5DF700BD37B8 /* AddTaskView.swift */,
+				E26526CD26724BE400003785 /* NoTasksView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 			files = (
 				E22C798B266A5DF700BD37B8 /* AddTaskView.swift in Sources */,
 				E23D8A862665248C0070F38E /* AppDelegate.swift in Sources */,
+				E26526CE26724BE400003785 /* NoTasksView.swift in Sources */,
 				E2555E692667B46E00C389EA /* Color.swift in Sources */,
 				E23D8A882665248C0070F38E /* SceneDelegate.swift in Sources */,
 				E230335F2668CE440099B1DB /* HomeViewModel.swift in Sources */,

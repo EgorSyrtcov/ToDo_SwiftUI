@@ -13,7 +13,13 @@ struct HomeView: View {
     
     var body: some View {
         NavigationView {
-            allTaskList
+            ZStack {
+                if vm.taskLists.isEmpty {
+                    NoTasksView()
+                } else {
+                    allTaskList
+                }
+            }
                 .navigationBarTitle("ToDo List 💡")
                 .navigationBarItems(
                     leading: EditButton(),
