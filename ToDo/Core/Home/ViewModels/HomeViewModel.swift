@@ -44,10 +44,6 @@ class HomeViewModel: ObservableObject {
         taskLists.append(task)
     }
     
-    func moveTask(from: IndexSet, to: Int) {
-        taskLists.move(fromOffsets: from, toOffset: to)
-    }
-    
     func updateTask(task: TaskModel) {
         
         if let index = taskLists.firstIndex ( where: { $0.id == task.id }) {
