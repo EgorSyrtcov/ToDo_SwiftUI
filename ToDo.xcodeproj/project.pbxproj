@@ -21,6 +21,14 @@
 		E2744BA22668B3D200B94DEB /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2744BA12668B3D200B94DEB /* PreviewProvider.swift */; };
 		E27BB1572667B6AB005E4DFD /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27BB1562667B6AB005E4DFD /* CircleButtonView.swift */; };
 		E27BB15B2667BBB1005E4DFD /* CircleButtonAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27BB15A2667BBB1005E4DFD /* CircleButtonAnimationView.swift */; };
+		E27BBCF6267873780005B5A6 /* ShopoingItemsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27BBCF5267873780005B5A6 /* ShopoingItemsRepository.swift */; };
+		E27BBCFB2678740B0005B5A6 /* HasGetShoppingItemsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27BBCFA2678740B0005B5A6 /* HasGetShoppingItemsUseCase.swift */; };
+		E27BBD02267881430005B5A6 /* ShoppingItemsRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27BBD01267881430005B5A6 /* ShoppingItemsRepositoryImpl.swift */; };
+		E27E11D5267731CD008DB54E /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27E11D4267731CD008DB54E /* AppDependencies.swift */; };
+		E27E11D8267731DC008DB54E /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27E11D7267731DC008DB54E /* AppRouter.swift */; };
+		E27E11E72677490E008DB54E /* HomeViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27E11E62677490E008DB54E /* HomeViewViewModel.swift */; };
+		E27E11EB26774ABA008DB54E /* HomeViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27E11EA26774ABA008DB54E /* HomeViewRouter.swift */; };
+		E27E11EE26774AF5008DB54E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27E11ED26774AF5008DB54E /* Router.swift */; };
 		E2FEA05D2667C4B000A2A52B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2FEA05C2667C4B000A2A52B /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +49,14 @@
 		E2744BA12668B3D200B94DEB /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		E27BB1562667B6AB005E4DFD /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
 		E27BB15A2667BBB1005E4DFD /* CircleButtonAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonAnimationView.swift; sourceTree = "<group>"; };
+		E27BBCF5267873780005B5A6 /* ShopoingItemsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopoingItemsRepository.swift; sourceTree = "<group>"; };
+		E27BBCFA2678740B0005B5A6 /* HasGetShoppingItemsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasGetShoppingItemsUseCase.swift; sourceTree = "<group>"; };
+		E27BBD01267881430005B5A6 /* ShoppingItemsRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemsRepositoryImpl.swift; sourceTree = "<group>"; };
+		E27E11D4267731CD008DB54E /* AppDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
+		E27E11D7267731DC008DB54E /* AppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		E27E11E62677490E008DB54E /* HomeViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewViewModel.swift; sourceTree = "<group>"; };
+		E27E11EA26774ABA008DB54E /* HomeViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewRouter.swift; sourceTree = "<group>"; };
+		E27E11ED26774AF5008DB54E /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		E2FEA05C2667C4B000A2A52B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,6 +76,7 @@
 			children = (
 				E23D8A842665248C0070F38E /* ToDo */,
 				E23D8A832665248C0070F38E /* Products */,
+				E27E11F426777E41008DB54E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,11 +91,13 @@
 		E23D8A842665248C0070F38E /* ToDo */ = {
 			isa = PBXGroup;
 			children = (
+				E27BBCF9267873E10005B5A6 /* UseCases */,
+				E27E11D32677319E008DB54E /* App */,
+				E27BBCF42678732F0005B5A6 /* Repositories */,
+				E27BBD05267883990005B5A6 /* Screens */,
 				E2744B992668B17000B94DEB /* Models */,
 				E2F2A6572667B21300ADE327 /* Core */,
 				E2F2A6562667B20300ADE327 /* Extensions */,
-				E23D8A852665248C0070F38E /* AppDelegate.swift */,
-				E23D8A872665248C0070F38E /* SceneDelegate.swift */,
 				E2FEA05C2667C4B000A2A52B /* Assets.xcassets */,
 				E23D8A902665248D0070F38E /* LaunchScreen.storyboard */,
 				E23D8A932665248D0070F38E /* Info.plist */,
@@ -99,9 +118,9 @@
 			isa = PBXGroup;
 			children = (
 				E23D8A892665248C0070F38E /* HomeView.swift */,
+				E27E11E62677490E008DB54E /* HomeViewViewModel.swift */,
+				E27E11EA26774ABA008DB54E /* HomeViewRouter.swift */,
 				E2744B9E2668B39B00B94DEB /* TaskViewCell.swift */,
-				E22C798A266A5DF700BD37B8 /* AddTaskView.swift */,
-				E26526CD26724BE400003785 /* NoTasksView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -127,8 +146,53 @@
 			children = (
 				E27BB1562667B6AB005E4DFD /* CircleButtonView.swift */,
 				E27BB15A2667BBB1005E4DFD /* CircleButtonAnimationView.swift */,
+				E26526CD26724BE400003785 /* NoTasksView.swift */,
 			);
 			path = CircleButton;
+			sourceTree = "<group>";
+		};
+		E27BBCF42678732F0005B5A6 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				E27BBCF5267873780005B5A6 /* ShopoingItemsRepository.swift */,
+				E27BBD01267881430005B5A6 /* ShoppingItemsRepositoryImpl.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		E27BBCF9267873E10005B5A6 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				E27BBCFA2678740B0005B5A6 /* HasGetShoppingItemsUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		E27BBD05267883990005B5A6 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				E27BB1542667B661005E4DFD /* Components */,
+				E2F2A6582667B21A00ADE327 /* Home */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		E27E11D32677319E008DB54E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E23D8A852665248C0070F38E /* AppDelegate.swift */,
+				E27E11D4267731CD008DB54E /* AppDependencies.swift */,
+				E27E11D7267731DC008DB54E /* AppRouter.swift */,
+				E23D8A872665248C0070F38E /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E27E11F426777E41008DB54E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		E2F2A6562667B20300ADE327 /* Extensions */ = {
@@ -143,8 +207,7 @@
 		E2F2A6572667B21300ADE327 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				E27BB1542667B661005E4DFD /* Components */,
-				E2F2A6582667B21A00ADE327 /* Home */,
+				E27E11ED26774AF5008DB54E /* Router.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -152,6 +215,7 @@
 		E2F2A6582667B21A00ADE327 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				E22C798A266A5DF700BD37B8 /* AddTaskView.swift */,
 				E26F996E2667995C00F26E2A /* Views */,
 				E2F2A6592667B22500ADE327 /* ViewModels */,
 			);
@@ -182,6 +246,8 @@
 			dependencies = (
 			);
 			name = ToDo;
+			packageProductDependencies = (
+			);
 			productName = ToDo;
 			productReference = E23D8A822665248C0070F38E /* ToDo.app */;
 			productType = "com.apple.product-type.application";
@@ -240,12 +306,20 @@
 				E23D8A862665248C0070F38E /* AppDelegate.swift in Sources */,
 				E26526CE26724BE400003785 /* NoTasksView.swift in Sources */,
 				E2555E692667B46E00C389EA /* Color.swift in Sources */,
+				E27E11EB26774ABA008DB54E /* HomeViewRouter.swift in Sources */,
+				E27BBCF6267873780005B5A6 /* ShopoingItemsRepository.swift in Sources */,
+				E27E11D8267731DC008DB54E /* AppRouter.swift in Sources */,
+				E27BBCFB2678740B0005B5A6 /* HasGetShoppingItemsUseCase.swift in Sources */,
 				E23D8A882665248C0070F38E /* SceneDelegate.swift in Sources */,
 				E230335F2668CE440099B1DB /* HomeViewModel.swift in Sources */,
 				E2744B9F2668B39B00B94DEB /* TaskViewCell.swift in Sources */,
 				E27BB1572667B6AB005E4DFD /* CircleButtonView.swift in Sources */,
+				E27BBD02267881430005B5A6 /* ShoppingItemsRepositoryImpl.swift in Sources */,
+				E27E11EE26774AF5008DB54E /* Router.swift in Sources */,
 				E23D8A8A2665248C0070F38E /* HomeView.swift in Sources */,
+				E27E11E72677490E008DB54E /* HomeViewViewModel.swift in Sources */,
 				E27BB15B2667BBB1005E4DFD /* CircleButtonAnimationView.swift in Sources */,
+				E27E11D5267731CD008DB54E /* AppDependencies.swift in Sources */,
 				E2744BA22668B3D200B94DEB /* PreviewProvider.swift in Sources */,
 				E2744B9B2668B18D00B94DEB /* TaskModel.swift in Sources */,
 			);

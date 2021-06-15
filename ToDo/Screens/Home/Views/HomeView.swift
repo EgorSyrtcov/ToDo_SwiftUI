@@ -9,32 +9,33 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject var vm = HomeViewModel()
+    @ObservedObject private var viewModel: HomeViewViewModel
+    
+    init(viewModel: HomeViewViewModel) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
-        NavigationView {
             ZStack {
-                if vm.taskLists.isEmpty {
+                if viewModel.items.isEmpty {
                     NoTasksView()
                 } else {
                     allTaskList
                 }
             }
-                .navigationBarTitle("ToDo List 💡")
-                .navigationBarItems(
-                    leading: EditButton(),
-                    trailing: NavigationLink(
-                                        destination: AddTaskView(), label: {
-                                            CircleButtonView(iconName: "plus")
-                                        }))
-        }
-        .environmentObject(vm)
+            .navigationBarTitle("ToDo List 💡")
+            .navigationBarItems(
+                leading: EditButton(),
+                trailing: NavigationLink(
+                    destination: AddTaskView(), label: {
+                        CircleButtonView(iconName: "plus")
+                    }))
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(viewModel: ._preview) 
     }
 }
 
@@ -42,7 +43,7 @@ extension HomeView {
     
     private var allTaskList: some View {
         List {
-            ForEach(vm.taskLists) { (item) in
+            ForEach(viewModel.items) { (item) in
                 TaskViewCell(task: item)
             }
         }
