@@ -8,14 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		E22C798B266A5DF700BD37B8 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22C798A266A5DF700BD37B8 /* AddTaskView.swift */; };
-		E230335F2668CE440099B1DB /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E230335E2668CE440099B1DB /* HomeViewModel.swift */; };
+		E22DCA422678AC710026AB62 /* NoTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22DCA412678AC710026AB62 /* NoTasksView.swift */; };
 		E23D8A862665248C0070F38E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23D8A852665248C0070F38E /* AppDelegate.swift */; };
 		E23D8A882665248C0070F38E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23D8A872665248C0070F38E /* SceneDelegate.swift */; };
 		E23D8A8A2665248C0070F38E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23D8A892665248C0070F38E /* HomeView.swift */; };
 		E23D8A8F2665248D0070F38E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E23D8A8E2665248D0070F38E /* Preview Assets.xcassets */; };
 		E23D8A922665248D0070F38E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E23D8A902665248D0070F38E /* LaunchScreen.storyboard */; };
 		E2555E692667B46E00C389EA /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2555E682667B46E00C389EA /* Color.swift */; };
-		E26526CE26724BE400003785 /* NoTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26526CD26724BE400003785 /* NoTasksView.swift */; };
 		E2744B9B2668B18D00B94DEB /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2744B9A2668B18D00B94DEB /* TaskModel.swift */; };
 		E2744B9F2668B39B00B94DEB /* TaskViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2744B9E2668B39B00B94DEB /* TaskViewCell.swift */; };
 		E2744BA22668B3D200B94DEB /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2744BA12668B3D200B94DEB /* PreviewProvider.swift */; };
@@ -24,6 +23,9 @@
 		E27BBCF6267873780005B5A6 /* ShopoingItemsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27BBCF5267873780005B5A6 /* ShopoingItemsRepository.swift */; };
 		E27BBCFB2678740B0005B5A6 /* HasGetShoppingItemsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27BBCFA2678740B0005B5A6 /* HasGetShoppingItemsUseCase.swift */; };
 		E27BBD02267881430005B5A6 /* ShoppingItemsRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27BBD01267881430005B5A6 /* ShoppingItemsRepositoryImpl.swift */; };
+		E27BBD08267885A10005B5A6 /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27BBD07267885A10005B5A6 /* AddTaskViewModel.swift */; };
+		E27BBD0E267887770005B5A6 /* HasAddShoppingItemUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27BBD0D267887770005B5A6 /* HasAddShoppingItemUseCase.swift */; };
+		E27BBD11267888DC0005B5A6 /* AddTaskRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27BBD10267888DC0005B5A6 /* AddTaskRouter.swift */; };
 		E27E11D5267731CD008DB54E /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27E11D4267731CD008DB54E /* AppDependencies.swift */; };
 		E27E11D8267731DC008DB54E /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27E11D7267731DC008DB54E /* AppRouter.swift */; };
 		E27E11E72677490E008DB54E /* HomeViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27E11E62677490E008DB54E /* HomeViewViewModel.swift */; };
@@ -34,7 +36,7 @@
 
 /* Begin PBXFileReference section */
 		E22C798A266A5DF700BD37B8 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
-		E230335E2668CE440099B1DB /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		E22DCA412678AC710026AB62 /* NoTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoTasksView.swift; sourceTree = "<group>"; };
 		E23D8A822665248C0070F38E /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E23D8A852665248C0070F38E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E23D8A872665248C0070F38E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,7 +45,6 @@
 		E23D8A912665248D0070F38E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E23D8A932665248D0070F38E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2555E682667B46E00C389EA /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		E26526CD26724BE400003785 /* NoTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoTasksView.swift; sourceTree = "<group>"; };
 		E2744B9A2668B18D00B94DEB /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		E2744B9E2668B39B00B94DEB /* TaskViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewCell.swift; sourceTree = "<group>"; };
 		E2744BA12668B3D200B94DEB /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
@@ -52,6 +53,9 @@
 		E27BBCF5267873780005B5A6 /* ShopoingItemsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopoingItemsRepository.swift; sourceTree = "<group>"; };
 		E27BBCFA2678740B0005B5A6 /* HasGetShoppingItemsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasGetShoppingItemsUseCase.swift; sourceTree = "<group>"; };
 		E27BBD01267881430005B5A6 /* ShoppingItemsRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemsRepositoryImpl.swift; sourceTree = "<group>"; };
+		E27BBD07267885A10005B5A6 /* AddTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
+		E27BBD0D267887770005B5A6 /* HasAddShoppingItemUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasAddShoppingItemUseCase.swift; sourceTree = "<group>"; };
+		E27BBD10267888DC0005B5A6 /* AddTaskRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskRouter.swift; sourceTree = "<group>"; };
 		E27E11D4267731CD008DB54E /* AppDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		E27E11D7267731DC008DB54E /* AppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		E27E11E62677490E008DB54E /* HomeViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewViewModel.swift; sourceTree = "<group>"; };
@@ -114,17 +118,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		E26F996E2667995C00F26E2A /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				E23D8A892665248C0070F38E /* HomeView.swift */,
-				E27E11E62677490E008DB54E /* HomeViewViewModel.swift */,
-				E27E11EA26774ABA008DB54E /* HomeViewRouter.swift */,
-				E2744B9E2668B39B00B94DEB /* TaskViewCell.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		E2744B992668B17000B94DEB /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				E27BB1552667B678005E4DFD /* CircleButton */,
+				E22DCA412678AC710026AB62 /* NoTasksView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -146,7 +140,6 @@
 			children = (
 				E27BB1562667B6AB005E4DFD /* CircleButtonView.swift */,
 				E27BB15A2667BBB1005E4DFD /* CircleButtonAnimationView.swift */,
-				E26526CD26724BE400003785 /* NoTasksView.swift */,
 			);
 			path = CircleButton;
 			sourceTree = "<group>";
@@ -164,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				E27BBCFA2678740B0005B5A6 /* HasGetShoppingItemsUseCase.swift */,
+				E27BBD0D267887770005B5A6 /* HasAddShoppingItemUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -171,10 +165,29 @@
 		E27BBD05267883990005B5A6 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				E27BBD0A267885BD0005B5A6 /* AddTask */,
 				E27BB1542667B661005E4DFD /* Components */,
 				E2F2A6582667B21A00ADE327 /* Home */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		E27BBD0A267885BD0005B5A6 /* AddTask */ = {
+			isa = PBXGroup;
+			children = (
+				E27BBD10267888DC0005B5A6 /* AddTaskRouter.swift */,
+				E22C798A266A5DF700BD37B8 /* AddTaskView.swift */,
+				E27BBD07267885A10005B5A6 /* AddTaskViewModel.swift */,
+			);
+			path = AddTask;
+			sourceTree = "<group>";
+		};
+		E27BBD0B267885D60005B5A6 /* HomeCell */ = {
+			isa = PBXGroup;
+			children = (
+				E2744B9E2668B39B00B94DEB /* TaskViewCell.swift */,
+			);
+			path = HomeCell;
 			sourceTree = "<group>";
 		};
 		E27E11D32677319E008DB54E /* App */ = {
@@ -215,19 +228,12 @@
 		E2F2A6582667B21A00ADE327 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				E22C798A266A5DF700BD37B8 /* AddTaskView.swift */,
-				E26F996E2667995C00F26E2A /* Views */,
-				E2F2A6592667B22500ADE327 /* ViewModels */,
+				E27BBD0B267885D60005B5A6 /* HomeCell */,
+				E23D8A892665248C0070F38E /* HomeView.swift */,
+				E27E11E62677490E008DB54E /* HomeViewViewModel.swift */,
+				E27E11EA26774ABA008DB54E /* HomeViewRouter.swift */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		E2F2A6592667B22500ADE327 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				E230335E2668CE440099B1DB /* HomeViewModel.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,15 +309,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				E22C798B266A5DF700BD37B8 /* AddTaskView.swift in Sources */,
+				E27BBD11267888DC0005B5A6 /* AddTaskRouter.swift in Sources */,
+				E27BBD0E267887770005B5A6 /* HasAddShoppingItemUseCase.swift in Sources */,
 				E23D8A862665248C0070F38E /* AppDelegate.swift in Sources */,
-				E26526CE26724BE400003785 /* NoTasksView.swift in Sources */,
 				E2555E692667B46E00C389EA /* Color.swift in Sources */,
 				E27E11EB26774ABA008DB54E /* HomeViewRouter.swift in Sources */,
 				E27BBCF6267873780005B5A6 /* ShopoingItemsRepository.swift in Sources */,
 				E27E11D8267731DC008DB54E /* AppRouter.swift in Sources */,
 				E27BBCFB2678740B0005B5A6 /* HasGetShoppingItemsUseCase.swift in Sources */,
 				E23D8A882665248C0070F38E /* SceneDelegate.swift in Sources */,
-				E230335F2668CE440099B1DB /* HomeViewModel.swift in Sources */,
+				E22DCA422678AC710026AB62 /* NoTasksView.swift in Sources */,
+				E27BBD08267885A10005B5A6 /* AddTaskViewModel.swift in Sources */,
 				E2744B9F2668B39B00B94DEB /* TaskViewCell.swift in Sources */,
 				E27BB1572667B6AB005E4DFD /* CircleButtonView.swift in Sources */,
 				E27BBD02267881430005B5A6 /* ShoppingItemsRepositoryImpl.swift in Sources */,

@@ -8,7 +8,7 @@
 import SwiftUI
 
 protocol HomeViewRouter: Router {
-    
+    func goToAddItem(_ completion: (() -> Void)?)
 }
 
 final class HomeViewRouterImpl: BaseRouter<HomeView>, HomeViewRouter {
@@ -26,5 +26,11 @@ final class HomeViewRouterImpl: BaseRouter<HomeView>, HomeViewRouter {
         let view = HomeView(viewModel: model)
         super.init(view: view)
         model.router = self
+    }
+    
+    func goToAddItem(_ completion: (() -> Void)?) {
+        let router = AddItemRouterImpl(dependencies: dependencies, completion: completion)
+        let navigationController = UINavigationController(rootViewController: router)
+        present(navigationController)
     }
 }

@@ -2,7 +2,7 @@
 //  NoTasksView.swift
 //  ToDo
 //
-//  Created by Egor Syrtcov on 6/10/21.
+//  Created by Egor Syrtcov on 6/15/21.
 //
 
 import SwiftUI
@@ -18,23 +18,23 @@ struct NoTasksView: View {
                     .font(.title)
                     .fontWeight(.semibold)
                 
-                NavigationLink(
-                    destination: AddTaskView(),
-                    label: {
-                        Text("Add Something 🤔")
-                            .foregroundColor(.white)
-                            .font(.headline)
-                            .frame(height: 55)
-                            .frame(maxWidth: .infinity)
-                            .background(animate ? Color.red : Color.blue)
-                            .cornerRadius(10)
-                    })
-                    .padding(.horizontal, animate ? 30 : 50)
-                    .shadow(color: animate ? Color.red.opacity(0.7) : Color.blue.opacity(0.7),
-                            radius: animate ? 30 : 10,
-                            x: 0,
-                            y: animate ? 50 : 30)
-                    .scaleEffect(animate ? 1.1 : 1.0)
+                Button(action: {
+                    print("Tap button")
+                }, label: {
+                    Text("Add Something 🤔")
+                        .foregroundColor(.white)
+                        .font(.headline)
+                        .frame(height: 55)
+                        .frame(maxWidth: .infinity)
+                        .background(animate ? Color.red : Color.blue)
+                        .cornerRadius(10)
+                })
+                .padding(.horizontal, animate ? 30 : 50)
+                .shadow(color: animate ? Color.red.opacity(0.7) : Color.blue.opacity(0.7),
+                        radius: animate ? 30 : 10,
+                        x: 0,
+                        y: animate ? 50 : 30)
+                .scaleEffect(animate ? 1.1 : 1.0)
             }
             .padding(60)
             

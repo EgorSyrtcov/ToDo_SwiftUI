@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AddTaskView: View {
     
-    @Environment(\.presentationMode) var presentationMode
+    @ObservedObject private var viewModel: AddTaskViewModel
     
     @State private var newTask: String = ""
     @State private var newDiscription: String = ""
@@ -17,7 +17,10 @@ struct AddTaskView: View {
     @State var showsAlert = false
     @State var alertTitle: String = ""
     
-    @EnvironmentObject var vm: HomeViewModel
+    
+    init(viewModel: AddTaskViewModel) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         VStack(spacing: 25) {
@@ -48,7 +51,7 @@ struct AddTaskView: View {
                     })
         }
         .offset(y: -60)
-        .alert(isPresented: $showsAlert, content: getAlert)
+//        .alert(isPresented: $showsAlert, content: getAlert)
     }
     
     func textIsAppropriate() -> Bool {
@@ -61,23 +64,23 @@ struct AddTaskView: View {
     }
     
     func saveButtonPresenter() {
-        if textIsAppropriate() {
-            
-            let task = TaskModel(title: newTask,
-                                 description: newDiscription,
-                                 isCompleted: false)
-            vm.addToDo(task)
-            presentationMode.wrappedValue.dismiss()
-        }
+//        if textIsAppropriate() {
+//
+//            let task = TaskModel(title: newTask,
+//                                 description: newDiscription,
+//                                 isCompleted: false)
+//            vm.addToDo(task)
+//            presentationMode.wrappedValue.dismiss()
+//        }
     }
     
-    func getAlert() -> Alert {
-        Alert(title: Text(alertTitle))
-    }
+//    func getAlert() -> Alert {
+//        Alert(title: Text(alertTitle))
+//    }
 }
 
-struct AddTaskView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddTaskView()
-    }
-}
+//struct AddTaskView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AddTaskView(vm: ._preview)
+//    }
+//}

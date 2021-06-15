@@ -1,7 +1,7 @@
 import Foundation
 import Combine
 
-protocol AppDependencies: HasGetShoppingItemsUseCase {}
+protocol AppDependencies: HasGetShoppingItemsUseCase, HasAddShoppingItemUseCase {}
 
 final class AppDependenciesImpl: AppDependencies {
     
@@ -9,6 +9,10 @@ final class AppDependenciesImpl: AppDependencies {
     //     MARK: Public
     
     var getShoppingItemsUseCase: GetShoppingItemsUseCase {
+        .init(shoppingItemsRepository: shoppingItemsRepository)
+    }
+    
+    var addShoppingItemUseCase: AddShoppingItemUseCase {
         .init(shoppingItemsRepository: shoppingItemsRepository)
     }
     
@@ -22,21 +26,11 @@ final class AppDependenciesImpl: AppDependencies {
 final class AppDependenciesPreview: AppDependencies {
     
     let getShoppingItemsUseCase: GetShoppingItemsUseCase
+    let addShoppingItemUseCase: AddShoppingItemUseCase
     
     init() {
         let shoppingItemsRepository = ShoppingItemsRepositoryPreview()
         self.getShoppingItemsUseCase = .init(shoppingItemsRepository: shoppingItemsRepository)
-    }
-}
-
-public final class ShoppingItemsRepositoryPreview: ShoppingItemsRepository {
-    public init() {}
-    
-    public func shoppingItems() -> AnyPublisher<[TaskModel], Error> {
-        Result.Publisher(.success([
-            TaskModel(title: "111", description: "", isCompleted: false),
-            TaskModel(title: "222", description: "nil", isCompleted: true),
-            TaskModel(title: "333", description: "nil", isCompleted: false)
-        ])).eraseToAnyPublisher()
+        self.addShoppingItemUseCase = .init(shoppingItemsRepository: shoppingItemsRepository)
     }
 }

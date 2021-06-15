@@ -27,7 +27,21 @@ final class HomeViewViewModel: ObservableObject {
     init(dependencies: Dependencies) {
         self.dependencies = dependencies
     }
-
+    
+    // MARK: - API
+    
+    func addItemAction() {
+        router?.goToAddItem { [weak self] in
+            self?.reloadData()
+        }
+    }
+    
+    private func reloadData() {
+        dependencies.getShoppingItemsUseCase
+            .run()
+            .replaceError(with: [])
+            .assign(to: &$items)
+    }
 }
 
 extension HomeViewViewModel {
