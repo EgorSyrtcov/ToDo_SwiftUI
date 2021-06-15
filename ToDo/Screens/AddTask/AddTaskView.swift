@@ -51,36 +51,37 @@ struct AddTaskView: View {
                     })
         }
         .offset(y: -60)
-//        .alert(isPresented: $showsAlert, content: getAlert)
+        .navigationBarItems(leading:
+            Button("Cancel", action: {
+                viewModel.cancelAction()
+            }), trailing:
+            Button("Done", action: {
+                saveButtonPresenter()
+            })
+        )
+        .alert(isPresented: $showsAlert, content: getAlert)
     }
-    
-    func textIsAppropriate() -> Bool {
-        if newTask.count < 3 {
-            alertTitle = "Your new todo item must be at least 3 characters long!!!😨😰😱"
-            showsAlert.toggle()
-            return false
-        }
-        return true
-    }
-    
-    func saveButtonPresenter() {
-//        if textIsAppropriate() {
-//
-//            let task = TaskModel(title: newTask,
-//                                 description: newDiscription,
-//                                 isCompleted: false)
-//            vm.addToDo(task)
-//            presentationMode.wrappedValue.dismiss()
-//        }
-    }
-    
-//    func getAlert() -> Alert {
-//        Alert(title: Text(alertTitle))
-//    }
 }
 
-//struct AddTaskView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AddTaskView(vm: ._preview)
-//    }
-//}
+struct AddTaskView_Previews: PreviewProvider {
+    static var previews: some View {
+        AddTaskView(viewModel: ._preview)
+    }
+}
+
+extension AddTaskView {
+    
+    func saveButtonPresenter() {
+        
+        if viewModel.textIsAppropriate(textCount: newTask.count) {
+            viewModel.createItemAction(title: newTask, description: newDiscription)
+        } else {
+            alertTitle = "Your new todo item must be at least 3 characters long!!!😨😰😱"
+            showsAlert.toggle()
+        }
+    }
+    
+    func getAlert() -> Alert {
+        Alert(title: Text(alertTitle))
+    }
+}

@@ -31,6 +31,9 @@ struct HomeView: View {
                 viewModel.addItemAction()
             })
         )
+        .onAppear {
+            viewModel.becomeActive()
+        }
     }
 }
 

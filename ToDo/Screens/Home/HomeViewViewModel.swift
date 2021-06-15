@@ -42,6 +42,10 @@ final class HomeViewViewModel: ObservableObject {
             .replaceError(with: [])
             .assign(to: &$items)
     }
+    
+    func becomeActive() {
+        reloadData()
+    }
 }
 
 extension HomeViewViewModel {

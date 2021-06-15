@@ -35,8 +35,30 @@ final class AddTaskViewModel: ObservableObject {
         router?.close()
     }
     
+    func createItemAction(title: String, description: String?) {
+        addItemCancellable = dependencies.addShoppingItemUseCase.run(with: title, description: description)
+            .sink(receiveCompletion: { [weak self] result in
+                switch result {
+                case .failure:
+                    break
+                case .finished:
+                    self?.router?.close()
+                }
+            }, receiveValue: {})
+    }
+    
 }
 
 extension AddTaskViewModel {
     static let _preview = AddTaskViewModel(dependencies: AppDependenciesPreview())
+}
+
+extension AddTaskViewModel {
+    
+    func textIsAppropriate(textCount: Int) -> Bool {
+        if textCount < 3 {
+            return false
+        }
+        return true
+    }
 }
