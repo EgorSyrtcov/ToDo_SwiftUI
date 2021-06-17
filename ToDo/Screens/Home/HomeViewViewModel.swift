@@ -46,6 +46,10 @@ final class HomeViewViewModel: ObservableObject {
     func becomeActive() {
         reloadData()
     }
+    
+    func itemDetailsAction(_ item: TaskModel) {
+        router?.goToItemDetails(item) 
+    }
 }
 
 extension HomeViewViewModel {

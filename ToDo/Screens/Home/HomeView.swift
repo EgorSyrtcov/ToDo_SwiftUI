@@ -48,7 +48,12 @@ extension HomeView {
     private var allTaskList: some View {
         List {
             ForEach(viewModel.items) { (item) in
-                TaskViewCell(task: item)
+//                TaskViewCell(task: item)
+                Button(action: {
+                    viewModel.itemDetailsAction(item)
+                }, label: {
+                    TaskViewCell(task: item)
+                })
             }
         }
         .listStyle(PlainListStyle())

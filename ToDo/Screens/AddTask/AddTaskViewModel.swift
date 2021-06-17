@@ -8,7 +8,6 @@
 import Foundation
 import Combine
 
-
 final class AddTaskViewModel: ObservableObject {
     
     // MARK: - Inner Types
@@ -46,7 +45,6 @@ final class AddTaskViewModel: ObservableObject {
                 }
             }, receiveValue: {})
     }
-    
 }
 
 extension AddTaskViewModel {

@@ -12,4 +12,5 @@ public protocol ShoppingItemsRepository {
 
     func shoppingItems() -> AnyPublisher<[TaskModel], Error>
     func addShoppingItem(with title: String, description: String?) -> AnyPublisher<Void, Error>
+    func deleteShoppingItem(with id: String) -> AnyPublisher<Void, Error>
 }

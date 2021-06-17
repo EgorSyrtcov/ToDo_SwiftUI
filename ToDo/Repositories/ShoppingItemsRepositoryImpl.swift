@@ -45,6 +45,16 @@ public final class ShoppingItemsRepositoryImpl: ShoppingItemsRepository {
                 return Just(()).setFailureType(to: Error.self).eraseToAnyPublisher()
             }.eraseToAnyPublisher()
     }
+    
+    public func deleteShoppingItem(with id: String) -> AnyPublisher<Void, Error> {
+        shoppingItems()
+            .flatMap { items -> AnyPublisher<Void, Error> in
+                let items = items.filter { $0.id != id }
+                let data = (try? JSONEncoder().encode(items)) ?? Data()
+                UserDefaults.standard.set(data, forKey: Constants.itemsKey)
+                return Just(()).setFailureType(to: Error.self).eraseToAnyPublisher()
+            }.eraseToAnyPublisher()
+    }
 }
 
 public final class ShoppingItemsRepositoryPreview: ShoppingItemsRepository {
@@ -60,6 +70,10 @@ public final class ShoppingItemsRepositoryPreview: ShoppingItemsRepository {
     }
     
     public func addShoppingItem(with title: String, description: String?) -> AnyPublisher<Void, Error> {
+        Result.Publisher(.success(())).eraseToAnyPublisher()
+    }
+    
+    public func deleteShoppingItem(with id: String) -> AnyPublisher<Void, Error> {
         Result.Publisher(.success(())).eraseToAnyPublisher()
     }
 }
