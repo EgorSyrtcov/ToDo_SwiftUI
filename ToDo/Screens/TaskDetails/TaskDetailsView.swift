@@ -27,7 +27,20 @@ struct TaskDetailsView: View {
             }
             .padding()
             
-            Button(action: {}, label: {
+            Button(action: {
+                viewModel.itemCompleted()
+            }, label: {
+                Text(viewModel.task.isCompleted ? "Not Completed" : "Completed")
+                    .bold()
+                    .frame(width: 280, height: 50)
+                    .background(Color.green)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            })
+            
+            Button(action: {
+                viewModel.itemDeleteAction()
+            }, label: {
                 Text("Delete")
                     .bold()
                     .frame(width: 280, height: 50)

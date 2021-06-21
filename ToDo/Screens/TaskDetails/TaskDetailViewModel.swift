@@ -11,7 +11,7 @@ import Combine
 final class TaskDetailViewModel: ObservableObject {
     
     // MARK: - Inner Types
-    typealias Dependencies = HasDeleteShoppingItemUseCase 
+    typealias Dependencies = HasDeleteShoppingItemUseCase & HasComletedShoppingItem
     
     // MARK: - Properties
     // MARK: Public
@@ -22,7 +22,9 @@ final class TaskDetailViewModel: ObservableObject {
     
     // MARK: Private
 
-    private var confirmationCancellable: AnyCancellable?
+    private var deleteCancellable: AnyCancellable?
+    private var completed: AnyCancellable?
+    
     private let dependencies: Dependencies
     
     init(dependencies: Dependencies, task: TaskModel) {
@@ -30,12 +32,31 @@ final class TaskDetailViewModel: ObservableObject {
         self.task = task
     }
     
-    func itemPurchasedAction() {
-        confirmationCancellable = router?.goToConfirmationAlert(title: "Confirm", message: "Are you sure you want to delete '\(task.title)'?")
+    func itemDeleteAction() {
+        deleteCancellable = router?.goToAlert(title: "DELETE", message: "Are you sure you want to delete '\(task.title)'?")
             .filter { $0 }
             .setFailureType(to: Error.self)
             .flatMap { [weak self, dependencies, task] _ -> AnyPublisher<Void, Error> in
                 dependencies.deleteShoppingItemUseCase.run(with: task.id) 
+                    .handleEvents(receiveCompletion: { finished in
+                        switch finished {
+                        case .failure:
+                            break
+                        case .finished:
+                            self?.router?.close()
+                        }
+                    })
+                    .eraseToAnyPublisher()
+            }.sink(receiveCompletion: { _ in }, receiveValue: {})
+    }
+    
+    func itemCompleted() {
+        completed = router?.goToAlert(title: "Completed", message: "Are you sure you want to change ?")
+            .filter { $0 }
+            .setFailureType(to: Error.self)
+            .flatMap { [weak self, dependencies, task] _ -> AnyPublisher<Void, Error> in
+                
+                dependencies.comletedShoppingItemUseCase.run(with: task.id)
                     .handleEvents(receiveCompletion: { finished in
                         switch finished {
                         case .failure:

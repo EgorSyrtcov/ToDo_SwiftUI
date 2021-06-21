@@ -11,17 +11,17 @@ import Combine
 public final class ShoppingItemsRepositoryImpl: ShoppingItemsRepository {
     
     // MARK: - Inner Types
-
+    
     private enum Constants {
         static let itemsKey = "key.shoppingItems"
     }
-
+    
     // MARK: - Initializers
-
+    
     public init() {}
-
+    
     // MARK: - ShoppingItemsRepository
-
+    
     public func shoppingItems() -> AnyPublisher<[TaskModel], Error> {
         Deferred {
             Future { future in
@@ -55,6 +55,30 @@ public final class ShoppingItemsRepositoryImpl: ShoppingItemsRepository {
                 return Just(()).setFailureType(to: Error.self).eraseToAnyPublisher()
             }.eraseToAnyPublisher()
     }
+    
+    public func isCompleted(with id: String) -> AnyPublisher<Void, Error> {
+        shoppingItems()
+            .flatMap { items -> AnyPublisher<Void, Error> in
+                
+                //items.first(where: {$0.id == id })? .toggleCompleted()
+                
+                guard let item = items.first(where: {$0.id == id }),
+                      let index = items.firstIndex(of: item)
+                      else { return Just(()).setFailureType(to: Error.self).eraseToAnyPublisher()}
+                
+                let newItem = TaskModel(id: item.id,
+                                        title: item.title,
+                                        description: item.description,
+                                        isCompleted: !item.isCompleted)
+                var newItems = items
+                newItems.remove(at: index)
+                newItems.insert(newItem, at: max(index - 1,0))
+                
+                let data = (try? JSONEncoder().encode(newItems)) ?? Data()
+                UserDefaults.standard.set(data, forKey: Constants.itemsKey)
+                return Just(()).setFailureType(to: Error.self).eraseToAnyPublisher()
+            }.eraseToAnyPublisher()
+    }
 }
 
 public final class ShoppingItemsRepositoryPreview: ShoppingItemsRepository {
@@ -62,11 +86,7 @@ public final class ShoppingItemsRepositoryPreview: ShoppingItemsRepository {
     public init() {}
     
     public func shoppingItems() -> AnyPublisher<[TaskModel], Error> {
-        Result.Publisher(.success([
-            TaskModel(title: "111", description: "", isCompleted: false),
-            TaskModel(title: "222", description: "nil", isCompleted: true),
-            TaskModel(title: "333", description: "nil", isCompleted: false)
-        ])).eraseToAnyPublisher()
+        Result.Publisher(.success([])).eraseToAnyPublisher()
     }
     
     public func addShoppingItem(with title: String, description: String?) -> AnyPublisher<Void, Error> {
@@ -74,6 +94,10 @@ public final class ShoppingItemsRepositoryPreview: ShoppingItemsRepository {
     }
     
     public func deleteShoppingItem(with id: String) -> AnyPublisher<Void, Error> {
+        Result.Publisher(.success(())).eraseToAnyPublisher()
+    }
+    
+    public func isCompleted(with id: String) -> AnyPublisher<Void, Error> {
         Result.Publisher(.success(())).eraseToAnyPublisher()
     }
 }

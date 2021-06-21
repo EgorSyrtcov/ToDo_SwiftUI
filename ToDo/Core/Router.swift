@@ -4,7 +4,7 @@ import UIKit
 
 protocol Router: AnyObject {
 
-    func goToConfirmationAlert(title: String?, message: String?) -> AnyPublisher<Bool, Never>
+    func goToAlert(title: String?, message: String?) -> AnyPublisher<Bool, Never>
     func close(animated: Bool, completion: (() -> Void)?)
 }
 
@@ -17,7 +17,7 @@ extension Router {
 
 extension Router where Self: UIViewController {
 
-    func goToConfirmationAlert(title: String?, message: String?) -> AnyPublisher<Bool, Never> {
+    func goToAlert(title: String?, message: String?) -> AnyPublisher<Bool, Never> {
         Deferred { [weak self] in
             Future { future in
                 let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)

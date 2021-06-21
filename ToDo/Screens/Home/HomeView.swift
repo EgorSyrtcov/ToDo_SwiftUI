@@ -26,7 +26,6 @@ struct HomeView: View {
         }
         .navigationBarTitle("ToDo List 💡")
         .navigationBarItems(
-            leading: EditButton(),
             trailing: Button("Add", action: {
                 viewModel.addItemAction()
             })
@@ -48,7 +47,6 @@ extension HomeView {
     private var allTaskList: some View {
         List {
             ForEach(viewModel.items) { (item) in
-//                TaskViewCell(task: item)
                 Button(action: {
                     viewModel.itemDetailsAction(item)
                 }, label: {

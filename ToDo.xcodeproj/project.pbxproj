@@ -32,6 +32,7 @@
 		E27E11E72677490E008DB54E /* HomeViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27E11E62677490E008DB54E /* HomeViewViewModel.swift */; };
 		E27E11EB26774ABA008DB54E /* HomeViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27E11EA26774ABA008DB54E /* HomeViewRouter.swift */; };
 		E27E11EE26774AF5008DB54E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27E11ED26774AF5008DB54E /* Router.swift */; };
+		E2EBB1CB267C79EC0002FA43 /* HasComletedShoppingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EBB1CA267C79EC0002FA43 /* HasComletedShoppingItem.swift */; };
 		E2F4191F267B2515003E8B0C /* TaskDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F4191E267B2515003E8B0C /* TaskDetailViewModel.swift */; };
 		E2F41922267B25CC003E8B0C /* HasDeleteShoppingItemUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F41921267B25CC003E8B0C /* HasDeleteShoppingItemUseCase.swift */; };
 		E2F41925267B26BE003E8B0C /* TaskDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F41924267B26BE003E8B0C /* TaskDetailsRouter.swift */; };
@@ -66,6 +67,7 @@
 		E27E11E62677490E008DB54E /* HomeViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewViewModel.swift; sourceTree = "<group>"; };
 		E27E11EA26774ABA008DB54E /* HomeViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewRouter.swift; sourceTree = "<group>"; };
 		E27E11ED26774AF5008DB54E /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		E2EBB1CA267C79EC0002FA43 /* HasComletedShoppingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasComletedShoppingItem.swift; sourceTree = "<group>"; };
 		E2F4191E267B2515003E8B0C /* TaskDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewModel.swift; sourceTree = "<group>"; };
 		E2F41921267B25CC003E8B0C /* HasDeleteShoppingItemUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasDeleteShoppingItemUseCase.swift; sourceTree = "<group>"; };
 		E2F41924267B26BE003E8B0C /* TaskDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailsRouter.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				E27BBCFA2678740B0005B5A6 /* HasGetShoppingItemsUseCase.swift */,
 				E27BBD0D267887770005B5A6 /* HasAddShoppingItemUseCase.swift */,
 				E2F41921267B25CC003E8B0C /* HasDeleteShoppingItemUseCase.swift */,
+				E2EBB1CA267C79EC0002FA43 /* HasComletedShoppingItem.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				E27BBD08267885A10005B5A6 /* AddTaskViewModel.swift in Sources */,
 				E2744B9F2668B39B00B94DEB /* TaskViewCell.swift in Sources */,
 				E2F4191F267B2515003E8B0C /* TaskDetailViewModel.swift in Sources */,
+				E2EBB1CB267C79EC0002FA43 /* HasComletedShoppingItem.swift in Sources */,
 				E27BB1572667B6AB005E4DFD /* CircleButtonView.swift in Sources */,
 				E27BBD02267881430005B5A6 /* ShoppingItemsRepositoryImpl.swift in Sources */,
 				E2F41922267B25CC003E8B0C /* HasDeleteShoppingItemUseCase.swift in Sources */,
